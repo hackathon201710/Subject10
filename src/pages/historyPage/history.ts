@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {StorageService} from "../../service/StorageService";
+import {Picture} from "../../model/Picture";
 
 @Component({
   selector: 'page-history',
@@ -9,17 +10,20 @@ import {StorageService} from "../../service/StorageService";
 
 export class HistoryPage {
 
-  knownPictures: any;
+  pictures: Picture[];
   names: string[];
 
   constructor(public navCtrl: NavController, public storageService: StorageService) {
 
       this.storageService.getPictureData().then((data) => {
-        this.knownPictures = data;
+        this.pictures = data;
       });
-
-
-
   }
 
+  delete() {
+    this.storageService.deletePictures();
+    this.storageService.getPictureData().then((data) => {
+      this.pictures = data;
+    });
+  }
 }

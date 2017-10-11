@@ -8,6 +8,10 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let picture of knownPictures">{{picture}}</ion-item>
+    <ion-item *ngFor="let picture of pictures">
+      <div>{{picture.name}}</div>
+      <div>{{picture.comment}}</div>
+    </ion-item>
   </ion-list>
+  <button (click)="delete()" ion-button>Delete</button>
 </ion-content>
