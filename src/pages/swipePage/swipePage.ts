@@ -15,6 +15,7 @@ import {
   DragEvent,
   SwingStackComponent,
   SwingCardComponent} from 'angular2-swing';
+import {HistoryPage} from "../historyPage/history";
 
 
 
@@ -50,16 +51,32 @@ export class SwipePage {
     };
 
     this.listOfContacts = this.pictureService.getPictureData();
+<<<<<<< HEAD
+=======
+
+    console.log("this is the list of cards", this.cards)
+    console.log("This is the displaying profile", this.profile)
+    console.log("This is a list of contacts: ", this.listOfContacts);
+>>>>>>> d5cb9d6165b18c3500f0eade6765dfd6358dc6fc
 
   }
-  
+
+  goToHistory(){
+    this.navCtrl.push(HistoryPage)
+  }
+
   ngAfterViewInit() {
     // Either subscribe in controller or set in HTML
     this.swingStack.throwin.subscribe((event: DragEvent) => {
       event.target.style.background = '#ffffff';
     });
+<<<<<<< HEAD
    
     this.cards = [{name: this.pictureService.getPictureData()[0].name}];
+=======
+
+    this.cards = [{data: this.pictureService.getPictureData()[0].data, name: this.pictureService.getPictureData()[0].name}];
+>>>>>>> d5cb9d6165b18c3500f0eade6765dfd6358dc6fc
     this.addNewCards();
   }
 
@@ -69,17 +86,17 @@ onItemMove(element, x, y, r) {
   var abs = Math.abs(x);
   let min = Math.trunc(Math.min(16*16 - abs, 16*16));
   let hexCode = this.decimalToHex(min, 2);
-  
+
   if (x < 0) {
     color = '#FF' + hexCode + hexCode;
   } else {
     color = '#' + hexCode + 'FF' + hexCode;
   }
-  
+
   element.style.background = color;
   element.style['transform'] = `translate3d(0, 0, 0) translate(${x}px, ${y}px) rotate(${r}deg)`;
 }
- 
+
 // Connected through HTML
 voteUp(like: boolean) {
   let removedCard = this.cards.pop();
@@ -97,26 +114,30 @@ voteUp(like: boolean) {
 
 
 }
- 
+
 // Add new cards to our array
-addNewCards() { 
+addNewCards() {
   this.cards.push(this.listOfContacts[5])
   this.cards.push(this.listOfContacts[4])
   this.cards.push(this.listOfContacts[3])
   this.cards.push(this.listOfContacts[2])
   this.cards.push(this.listOfContacts[1])
   this.cards.push(this.listOfContacts[0])
+<<<<<<< HEAD
+=======
+
+>>>>>>> d5cb9d6165b18c3500f0eade6765dfd6358dc6fc
 }
- 
+
 // http://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hex-in-javascript
 decimalToHex(d, padding) {
   var hex = Number(d).toString(16);
   padding = typeof (padding) === "undefined" || padding === null ? padding = 2 : padding;
-  
+
   while (hex.length < padding) {
     hex = "0" + hex;
   }
-  
+
   return hex;
 }
 

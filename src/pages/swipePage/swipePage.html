@@ -1,3 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Police Tinder
+    </ion-title>
+    <ion-buttons end style="margin-right: 20px;">
+      <button ion-button icon-only (click)="goToHistory()">
+        <ion-icon name="folder"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
 
 <ion-content padding>
 <div swing-stack #myswing1 [stackConfig]="stackConfig" (throwoutleft)="voteUp(true)" (throwoutright)="voteUp(false)" id="card-stack">
@@ -6,13 +19,11 @@
           <img  [src]="c.data">
           <h2 style="text-align: center; font-size: 200%; font-weight: bold;"> {{c.name}}</h2>
       </ion-item>
- 
+
       <ion-card-content *ngIf="c.location">
         From: {{ c.location.city }}, {{ c.location.postcode }}<br>
         Phone: {{ c.phone }}
       </ion-card-content>
- 
-      <ion-row *ngIf="c.data">
         <ion-col>
           <button ion-button clear small icon-left color="primary" (click)="voteUp(true)">
             <ion-icon name="thumbs-down"></ion-icon>
