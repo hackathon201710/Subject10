@@ -56,6 +56,7 @@ export class SwipePage {
 
     this.listOfContacts = this.pictureService.getPictureData();
     
+    console.log("this is the list of cards", this.cards)
     console.log("This is the displaying profile", this.profile)
     console.log("This is a list of contacts: ", this.listOfContacts);
 
@@ -66,9 +67,9 @@ export class SwipePage {
     this.swingStack.throwin.subscribe((event: DragEvent) => {
       event.target.style.background = '#ffffff';
     });
-    
-    this.cards = [{email: ''}];
-    this.addNewCards(1);
+   
+    this.cards = [{data: this.pictureService.getPictureData()[0].data, name: this.pictureService.getPictureData()[0].name}];
+    this.addNewCards();
   }
 
 // Called whenever we drag an element
@@ -91,7 +92,6 @@ onItemMove(element, x, y, r) {
 // Connected through HTML
 voteUp(like: boolean) {
   let removedCard = this.cards.pop();
-  //this.addNewCards(1);
   if (like) {
     this.recentCard = 'You liked: ' + removedCard.email;
     this.cnt++;
@@ -101,21 +101,24 @@ voteUp(like: boolean) {
     this.recentCard = 'You disliked: ' + removedCard.email;
     this.cnt++;
   }
+
+  console.log("CardArrayLegth", this.cards.length)
+
+  if(this.cards.length == 0){
+    this.addNewCards();
+    this.cnt = 0;
+  }
+
 }
  
 // Add new cards to our array
-addNewCards(count: number) { 
+addNewCards() { 
   this.cards.push(this.listOfContacts[5])
   this.cards.push(this.listOfContacts[4])
   this.cards.push(this.listOfContacts[3])
   this.cards.push(this.listOfContacts[2])
   this.cards.push(this.listOfContacts[1])
   this.cards.push(this.listOfContacts[0])
-
- 
-  
-  
-  
   
 }
  
