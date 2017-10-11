@@ -11,26 +11,19 @@ import {Picture} from "../../model/Picture";
 })
 export class FormPage {
 
-    name: any = "";
     comment: any = "";
     data: any = "";
     cnt: number;
-    picture: Picture;
 
   constructor(public navCtrl: NavController,  public pictureService: PictureService, public navParams: NavParams, public storageService: StorageService) {
     this.cnt = this.navParams.get('cnt');
-    this.picture = new Picture;
     this.data = pictureService.getPictures()[this.cnt];
   }
 
   done() {
-    this.picture.data = this.data;
-    this.picture.name = this.name;
-    this.picture.comment = this.comment;
-    console.log("NAME: " + this.picture.name);
-    console.log("COMMENT : " + this.picture.comment);
-    this.storageService.savePictureData(this.picture).then(() => {
-      this.navCtrl.push(HistoryPage);
+    this.data.comment = this.comment;
+    this.storageService.savePictureData(this.data).then(() => {
+      this.navCtrl.pop();
     });
   }
 
