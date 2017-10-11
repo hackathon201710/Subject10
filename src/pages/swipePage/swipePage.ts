@@ -36,6 +36,7 @@ export class SwipePage {
   cards: Array<any>;
   stackConfig: StackConfig;
   recentCard: string = '';
+  isDone: boolean
 
   constructor(public navCtrl: NavController, public pictureService: PictureService) {
     this.stackConfig = {
@@ -51,7 +52,8 @@ export class SwipePage {
     };
 
     this.listOfContacts = this.pictureService.getPictureData();
-    this.cards = new Array<any>()
+    this.cards = new Array<any>();
+    this.isDone = false;
   }
 
   goToHistory(){
@@ -91,10 +93,18 @@ voteUp(like: boolean) {
     this.recentCard = 'You liked: ' + removedCard.email;
     this.cnt++;
     console.log(removedCard)
+    this.isDone = false;
+
   } else {
     this.navCtrl.push(FormPage, {cnt: this.cnt});
     this.recentCard = 'You disliked: ' + removedCard.email;
     this.cnt++;
+    this.isDone = false;
+
+  }
+
+  if (this.cards.length == 0){
+    this.isDone = true;
   }
 
   console.log("CardArrayLegth", this.cards.length)
