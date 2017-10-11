@@ -4,7 +4,7 @@ swipePage-home {
     height: 100%;
     background: #047915;
     border: 10px solid #4cb338;
-    margin: auto 0;
+    //margin: 100px auto 0;
     position: relative;
   }
 
@@ -15,4 +15,14 @@ swipePage-home {
     top: 3%;
     height: 90%;
   }
+
+  #card-stack ion-card img {
+
+    width: 80%;
+    position: relative;
+    text-align: center;
+    margin: auto;
+  }
+
+
 }

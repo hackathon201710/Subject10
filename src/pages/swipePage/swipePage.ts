@@ -36,11 +36,6 @@ export class SwipePage {
   cards: Array<any>;
   stackConfig: StackConfig;
   recentCard: string = '';
-  profileInformation: any[];
-  currentinformation: any;
-
-   //[{"gender":"female","name":{"title":"ms","first":"scarlett","last":"bradley"},"location":{"street":"9981 boghall road","city":"ratoath","state":"cavan","postcode":11268},"email":"scarlett.bradley@example.com","login":{"username":"goldenpeacock277","password":"passpass","salt":"UUNSX7Uo","md5":"b275f9ae9140a42e3de800916bcefc91","sha1":"227f1f89c0ffd46464be9a7669a0083a7dcdbb4a","sha256":"50b4ba317a33b4c3c4e5fe9287e454a66d0a6e0880da5ea4fc47518208cba91d"},"dob":"1968-09-01 04:41:42","registered":"2007-01-25 07:06:51","phone":"071-299-4616","cell":"081-578-2624","id":{"name":"PPS","value":"8170144T"},"picture":{"large":"https://randomuser.me/api/portraits/women/47.jpg","medium":"https://randomuser.me/api/portraits/med/women/47.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/47.jpg"},"nat":"IE"}]
-
 
   constructor(public navCtrl: NavController, public pictureService: PictureService) {
     this.stackConfig = {
@@ -56,11 +51,7 @@ export class SwipePage {
     };
 
     this.listOfContacts = this.pictureService.getPictureData();
-
-    console.log("this is the list of cards", this.cards)
-    console.log("This is the displaying profile", this.profile)
-    console.log("This is a list of contacts: ", this.listOfContacts);
-
+    this.cards = new Array<any>()
   }
 
   goToHistory(){
@@ -72,8 +63,7 @@ export class SwipePage {
     this.swingStack.throwin.subscribe((event: DragEvent) => {
       event.target.style.background = '#ffffff';
     });
-
-    this.cards = [{data: this.pictureService.getPictureData()[0].data, name: this.pictureService.getPictureData()[0].name}];
+   
     this.addNewCards();
   }
 
@@ -109,10 +99,6 @@ voteUp(like: boolean) {
 
   console.log("CardArrayLegth", this.cards.length)
 
-  if(this.cards.length == 0){
-    this.addNewCards();
-    this.cnt = 0;
-  }
 
 }
 
@@ -123,8 +109,7 @@ addNewCards() {
   this.cards.push(this.listOfContacts[3])
   this.cards.push(this.listOfContacts[2])
   this.cards.push(this.listOfContacts[1])
-  this.cards.push(this.listOfContacts[0])
-
+  this.cards.push(this.listOfContacts[0]);
 }
 
 // http://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hex-in-javascript
