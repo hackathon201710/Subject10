@@ -8,12 +8,12 @@
 <ion-content padding>
 
   <ion-card>
-    <img  src={{myPictures}}>
+    <img  src={{this.data}}>
   </ion-card>
 
 
-<ion-input placeholder= "Add title here"type="text" value=""></ion-input>
-<ion-textarea placeholder= "Add comment here"type="text" value=""></ion-textarea>
+<ion-input placeholder= "Add title here"type="text" value="" [(ngModel)]="this.name"></ion-input>
+<ion-textarea placeholder= "Add comment here"type="text" value="" [(ngModel)]="this.comment"></ion-textarea>
 
 <button ion-button block color="secondary" (click)="done()">DONE</button>
 
