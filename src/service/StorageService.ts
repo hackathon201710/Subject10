@@ -28,17 +28,20 @@ export class StorageService {
       }
       this.getPictureData().then((data: Picture[]) => {
         let saved = false;
+        if (!data) {
+          data = [];
+        }
         for (let i = 0; i < data.length; i++) {
           if (data[i].name === picture.name) {
             data[i] = picture;
             saved = true;
           }
-          if (!saved) {
-            data.push(picture);
-          }
-          this.storage.set("pictures", data);
-          resolve(data);
         }
+        if (!saved) {
+          data.push(picture);
+        }
+        this.storage.set("pictures", data);
+        resolve(data);
       });
     });
   }
