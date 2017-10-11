@@ -1,11 +1,11 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Police Tinder
+      Do you know this guy?
     </ion-title>
     <ion-buttons end style="margin-right: 20px;">
       <button ion-button icon-only (click)="goToHistory()">
-        <ion-icon name="folder"></ion-icon>
+        <ion-icon name="star"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -16,7 +16,6 @@
     <ion-card #mycards1 swing-card *ngFor="let c of cards">
       <ion-item>
           <img [src]="c.data">
-          <h2> {{c.name}}</h2>
       </ion-item>
 
       <ion-card-content *ngIf="c.location">

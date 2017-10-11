@@ -10,12 +10,12 @@ import {StorageService} from "../../service/StorageService";
 export class HistoryPage {
 
   knownPictures: any;
+  names: string[];
 
   constructor(public navCtrl: NavController, public storageService: StorageService) {
 
       this.storageService.getPictureData().then((data) => {
         this.knownPictures = data;
-        console.log(this.knownPictures.length);
       });
 
 
