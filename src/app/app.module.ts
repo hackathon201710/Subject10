@@ -25,7 +25,8 @@ import {PictureCard} from "../components/picture.card.component";
   entryComponents: [
     MyApp,
     HomePage,
-    FormPage
+    FormPage,
+    PictureCard
   ],
   providers: [
     PictureService,
