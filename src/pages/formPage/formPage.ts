@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
+import { PictureService} from '../../service/PictureService';
 
 @Component({
   selector: 'page-form',
@@ -7,8 +8,14 @@ import { NavController } from 'ionic-angular';
 })
 export class FormPage {
 
-  constructor(public navCtrl: NavController) {
+    myPictures: string;
+    cnt: number;
 
+  constructor(public navCtrl: NavController,  public pictureService: PictureService, public navParams: NavParams) {
+    this.cnt = this.navParams.get('cnt');
+    this.myPictures = pictureService.getPictures()[this.cnt];
+    console.log("form" + this.cnt)
   }
+
 
 }

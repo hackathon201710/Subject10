@@ -1,11 +1,20 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Police Tinder
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <picture-card data="{{data}}"></picture-card>
+  <ion-slides (ionSlideDidChange)="slideChanged()">
+    <ion-slide>
+      <picture-card data="{{data}}"></picture-card>
+    </ion-slide>
+  </ion-slides>
+  <ion-buttons>
+
+    <button ion-button color="danger" (click)="newPicture()">left</button>
+    <button ion-button color="secondary" (click)="swipeRight()">Right</button>
+  </ion-buttons>
 </ion-content>
