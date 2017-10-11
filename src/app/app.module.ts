@@ -3,7 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
+import { HistoryPage } from "../pages/historyPage/history";
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FormPage} from '../pages/formPage/formPage';
@@ -15,6 +15,7 @@ import {PictureCard} from "../components/picture.card.component";
     MyApp,
     HomePage,
     PictureCard,
+    HistoryPage,
     FormPage
   ],
   imports: [
@@ -26,6 +27,7 @@ import {PictureCard} from "../components/picture.card.component";
     MyApp,
     HomePage,
     FormPage,
+    HistoryPage,
     PictureCard
   ],
   providers: [

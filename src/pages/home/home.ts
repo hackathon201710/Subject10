@@ -28,7 +28,6 @@ export class HomePage {
 
   swipeRight(){
     this.navCtrl.push(FormPage, {cnt: this.cnt});
-    console.log("home" + this.cnt)
   }
 
   swipeLeft(){
