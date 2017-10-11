@@ -21,11 +21,11 @@ export class StorageService {
     });
   }
 
-  savePictureData(picture: Picture): Promise<any> {
-    if (!picture || !picture.name) {
-      return;
-    }
+  savePictureData(picture: Picture): Promise<Picture[]> {
     return new Promise((resolve, reject) => {
+      if (!picture || !picture.name) {
+        reject();
+      }
       this.getPictureData().then((data: Picture[]) => {
         let saved = false;
         for (let i = 0; i < data.length; i++) {
@@ -37,7 +37,7 @@ export class StorageService {
             data.push(picture);
           }
           this.storage.set("pictures", data);
-          resolve();
+          resolve(data);
         }
       });
     });
