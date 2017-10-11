@@ -29,8 +29,9 @@ export class FormPage {
     this.picture.comment = this.comment;
     console.log("NAME: " + this.picture.name);
     console.log("COMMENT : " + this.picture.comment);
-    this.storageService.savePictureData(this.picture);
-    this.navCtrl.push(HistoryPage);
+    this.storageService.savePictureData(this.picture).then(() => {
+      this.navCtrl.push(HistoryPage);
+    });
   }
 
 

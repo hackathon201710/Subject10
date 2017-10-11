@@ -15,7 +15,10 @@ export class HistoryPage {
 
       this.storageService.getPictureData().then((data) => {
         this.knownPictures = data;
+        console.log(this.knownPictures.length);
       });
+
+
 
   }
 
