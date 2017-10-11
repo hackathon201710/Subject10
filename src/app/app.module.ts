@@ -6,13 +6,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { FormPage } from '../pages/formPage/formPage';
+
+import {PictureService} from "../service/PictureService";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    FormPage,
   ],
   imports: [
     BrowserModule,
@@ -21,10 +21,10 @@ import { FormPage } from '../pages/formPage/formPage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    FormPage
+    HomePage
   ],
   providers: [
+    PictureService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
