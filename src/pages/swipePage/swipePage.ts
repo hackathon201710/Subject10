@@ -25,7 +25,8 @@ export class SwipePage {
   @ViewChild('myswing1') swingStack: SwingStackComponent;
   @ViewChildren('mycards1') swingCards: QueryList<SwingCardComponent>;
 
-  data: string;
+  listOfContacts: any[];
+  profile: sting;
   cards: Array<any>;
   stackConfig: StackConfig;
   recentCard: string = '';
@@ -35,7 +36,7 @@ export class SwipePage {
    //[{"gender":"female","name":{"title":"ms","first":"scarlett","last":"bradley"},"location":{"street":"9981 boghall road","city":"ratoath","state":"cavan","postcode":11268},"email":"scarlett.bradley@example.com","login":{"username":"goldenpeacock277","password":"passpass","salt":"UUNSX7Uo","md5":"b275f9ae9140a42e3de800916bcefc91","sha1":"227f1f89c0ffd46464be9a7669a0083a7dcdbb4a","sha256":"50b4ba317a33b4c3c4e5fe9287e454a66d0a6e0880da5ea4fc47518208cba91d"},"dob":"1968-09-01 04:41:42","registered":"2007-01-25 07:06:51","phone":"071-299-4616","cell":"081-578-2624","id":{"name":"PPS","value":"8170144T"},"picture":{"large":"https://randomuser.me/api/portraits/women/47.jpg","medium":"https://randomuser.me/api/portraits/med/women/47.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/47.jpg"},"nat":"IE"}]
 
 
-  constructor(private http: Http, public pictureService: PictureService) {
+  constructor(public pictureService: PictureService) {
     this.stackConfig = {
       throwOutConfidence: (offsetX, offsetY, element) => {
         return Math.min(Math.abs(offsetX) / (element.offsetWidth/2), 1);
@@ -48,40 +49,12 @@ export class SwipePage {
       }
     };
 
-    this.profileInformation = [
-    {
-      "gender": "male",
-      "name": {
-        "title": "mr",
-        "first": "Loki",
-        "last": ""
-      },
-      "location": {
-        "street": "Valhalla",
-        "city": "Stockholm",
-        "state": "Södermanland",
-        "postcode": "16865"
-      },
-      "email": "loki@totalyfake.com",
-      "login": {
-        "username":"goldenpeacock277",
-        "password":"passpass",
-        "salt":"UUNSX7Uo",
-        "md5":"b275f9ae9140a42e3de800916bcefc91",
-        "sha1":"227f1f89c0ffd46464be9a7669a0083a7dcdbb4a",
-        "sha256":"50b4ba317a33b4c3c4e5fe9287e454a66d0a6e0880da5ea4fc47518208cba91d"},
-        "dob":"1968-09-01 04:41:42",
-        "registered":"2007-01-25 07:06:51",
-        "phone":"071-299-4616",
-        "cell":"081-578-2624",
-        "id":{
-          "name":"PPS",
-          "value":"8170144T"
-        },
-        "nat":"IE"
-    }
-    ]
-    this.data = this.pictureService.getPictures()[0];
+    this.listOfContacts = this.pictureService.getPictureData();
+    this.profile = this.pictureService.getPictureData()[1];
+    
+    console.log("This is the displaying profile", this.profile)
+    console.log("This is a list of contacts: ", this.listOfContacts);
+
   }
   
   ngAfterViewInit() {
@@ -114,7 +87,7 @@ onItemMove(element, x, y, r) {
 // Connected through HTML
 voteUp(like: boolean) {
   let removedCard = this.cards.pop();
-  this.addNewCards(1);
+  //this.addNewCards(1);
   if (like) {
     this.recentCard = 'You liked: ' + removedCard.email;
   } else {
@@ -124,18 +97,13 @@ voteUp(like: boolean) {
  
 // Add new cards to our array
 addNewCards(count: number) {
-  /*this.http.get('https://randomuser.me/api/?results=' + count)
-  .map(data => data.json().results)
-  .subscribe(result => {
 
-   // console.log("result: " + JSON.stringify(result))
-    for (let val of result) {
-    //  console.log("val: " + JSON.stringify(val))
-      this.cards.push(val);
-    }
-  })*/
-
-  this.cards.push(this.profileInformation)
+  this.cards.push(this.profile)
+  this.cards.push(this.listOfContacts[0])
+  this.cards.push(this.listOfContacts[1])
+  this.cards.push(this.listOfContacts[2])
+  this.cards.push(this.listOfContacts[3])
+  this.cards.push(this.listOfContacts[4])
 }
  
 // http://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hex-in-javascript
