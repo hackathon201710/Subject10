@@ -1,15 +1,8 @@
-
 import {Component, Input} from "@angular/core";
-
-let template  = `
-  <ion-card>
-    <img src="{{data}}">
-  </ion-card>
-`;
 
 @Component({
   selector: "picture-card",
-  template: template
+  templateUrl: 'picture.card.html'
 })
 export class PictureCard {
 
