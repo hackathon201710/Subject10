@@ -26,6 +26,8 @@ import { SwipePage } from '../pages/swipePage/swipePage';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    SwingModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
