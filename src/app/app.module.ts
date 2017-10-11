@@ -9,24 +9,32 @@ import { HomePage } from '../pages/home/home';
 import { FormPage} from '../pages/formPage/formPage';
 import {PictureService} from "../service/PictureService";
 import {PictureCard} from "../components/picture.card.component";
+import { HttpModule } from '@angular/http';
+import { SwingModule } from 'angular2-swing';
+import { SwipePage } from '../pages/swipePage/swipePage';
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     PictureCard,
-    FormPage
+    FormPage,
+    SwipePage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    SwingModule,
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     FormPage,
-    PictureCard
+    PictureCard,
+    SwipePage,
   ],
   providers: [
     PictureService,
