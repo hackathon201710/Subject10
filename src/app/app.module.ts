@@ -13,6 +13,7 @@ import {PictureCard} from "../components/picture.card.component";
 import { HttpModule } from '@angular/http';
 import { SwingModule } from 'angular2-swing';
 import { SwipePage } from '../pages/swipePage/swipePage';
+import {StorageService} from "../service/StorageService";
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { SwipePage } from '../pages/swipePage/swipePage';
     MyApp,
     HomePage,
     FormPage,
+    HistoryPage,
     PictureCard,
     SwipePage,
   ],
@@ -43,6 +45,7 @@ import { SwipePage } from '../pages/swipePage/swipePage';
     PictureService,
     StatusBar,
     SplashScreen,
+    StorageService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
