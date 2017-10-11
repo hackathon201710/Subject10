@@ -17,6 +17,7 @@
       <ion-item *ngIf="c.data">
           <img  [src]="c.data">
           <h2 style="text-align: center; font-size: 200%; font-weight: bold;"> {{c.name}}</h2>
+      </ion-item>
 
       <ion-card-content *ngIf="c.location">
         From: {{ c.location.city }}, {{ c.location.postcode }}<br>
