@@ -20,6 +20,9 @@ export class HomePage {
   slideChanged() {
     let currentIndex = this.slides.getActiveIndex();
     if(this.slides.getActiveIndex() === currentIndex + 1){
+      this.swipeRight();
+    }else{
+      this.swipeLeft();
     }
   }
 
@@ -28,8 +31,12 @@ export class HomePage {
     console.log("home" + this.cnt)
   }
 
-  newPicture(){
+  swipeLeft(){
     this.cnt++;
+    this.newPicture();
+  }
+
+  newPicture(){
     this.data = this.pictureService.getPictures()[this.cnt];
   }
 
