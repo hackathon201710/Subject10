@@ -12,8 +12,7 @@ export class StorageService {
     return new Promise((resolve, reject) => {
       this.storage.get("pictures").then((val) => {
         if (val) {
-          let result = <Picture[]>JSON.parse(val);
-          resolve(result);
+          resolve(val);
         } else {
           resolve([]);
         }
