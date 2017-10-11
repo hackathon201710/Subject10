@@ -7,11 +7,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {PictureService} from "../service/PictureService";
+import {PictureCard} from "../components/picture.card.component";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    PictureCard
   ],
   imports: [
     BrowserModule,
