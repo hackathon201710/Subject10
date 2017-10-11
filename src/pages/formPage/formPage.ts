@@ -17,7 +17,7 @@ export class FormPage {
 
   constructor(public navCtrl: NavController,  public pictureService: PictureService, public navParams: NavParams, public storageService: StorageService) {
     this.cnt = this.navParams.get('cnt');
-    this.data = pictureService.getPictures()[this.cnt];
+    this.data = pictureService.getPictureData()[this.cnt];
   }
 
   done() {
