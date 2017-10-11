@@ -13,17 +13,17 @@ export class HomePage {
 
   data: string;
   cnt: number = 0;
+  currentIndex: number = 0;
 
   constructor(public navCtrl: NavController, public pictureService: PictureService) {
     this.data = this.pictureService.getPictures()[this.cnt];
   }
 
   slideChanged() {
-    let currentIndex = this.slides.getActiveIndex();
-    if(this.slides.getActiveIndex() === currentIndex + 1){
-      this.swipeRight();
-    }else{
+    if(this.slides.getPreviousIndex() < this.slides.getActiveIndex()){
       this.swipeLeft();
+    }else{
+      this.swipeRight();
     }
   }
 
