@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Yes or No?
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -22,14 +22,14 @@
       <ion-row *ngIf="c.name">
         <ion-col>
           <button ion-button clear small icon-left color="primary" (click)="voteUp(true)">
-            <ion-icon name="thumbs-up"></ion-icon>
-            Yes
+            <ion-icon name="thumbs-down"></ion-icon>
+            No
           </button>
         </ion-col>
         <ion-col>
           <button ion-button clear small icon-left color="primary" (click)="voteUp(false)">
-            <ion-icon name="thumbs-down"></ion-icon>
-            No
+            <ion-icon name="thumbs-up"></ion-icon>
+            Yes
           </button>
         </ion-col>
       </ion-row>
