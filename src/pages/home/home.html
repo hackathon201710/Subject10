@@ -3,11 +3,22 @@
     <ion-title>
       Police Tinder
     </ion-title>
+    <ion-buttons end style="margin-right: 20px;">
+      <button ion-button icon-only (click)="goToHistory()">
+        <ion-icon name="folder"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-slides (ionSlideDidChange)="slideChanged()">
+    <ion-slide>
+      <picture-card data="{{data}}"></picture-card>
+    </ion-slide>
+    <ion-slide>
+      <picture-card data="{{data}}"></picture-card>
+    </ion-slide>
     <ion-slide>
       <picture-card data="{{data}}"></picture-card>
     </ion-slide>

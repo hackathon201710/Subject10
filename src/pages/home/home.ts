@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {NavController, Slides} from 'ionic-angular';
 import {PictureService} from "../../service/PictureService";
 import {FormPage} from "../formPage/formPage";
+import {HistoryPage} from "../historyPage/history";
 
 @Component({
   selector: 'page-home',
@@ -26,13 +27,17 @@ export class HomePage {
     }
   }
 
+  goToHistory(){
+    this.navCtrl.push(HistoryPage)
+  }
+
   swipeRight(){
     this.navCtrl.push(FormPage, {cnt: this.cnt});
   }
 
   swipeLeft(){
     this.cnt++;
-    this.newPicture();
+    this.newPicture()
   }
 
   newPicture(){

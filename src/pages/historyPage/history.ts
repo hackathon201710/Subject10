@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import {NavController} from "ionic-angular";
 
 @Component({
   selector: 'page-history',
@@ -6,5 +7,13 @@ import {Component} from "@angular/core";
 })
 
 export class HistoryPage {
+
+  knownPictures: any;
+
+  constructor(public navCtrl: NavController) {
+
+
+
+  }
 
 }

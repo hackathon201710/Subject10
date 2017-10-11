@@ -10,6 +10,10 @@ import { HomePage } from '../pages/home/home';
 import { FormPage} from '../pages/formPage/formPage';
 import {PictureService} from "../service/PictureService";
 import {PictureCard} from "../components/picture.card.component";
+import { HttpModule } from '@angular/http';
+import { SwingModule } from 'angular2-swing';
+import { SwipePage } from '../pages/swipePage/swipePage';
+
 
 @NgModule({
   declarations: [
@@ -17,10 +21,13 @@ import {PictureCard} from "../components/picture.card.component";
     HomePage,
     PictureCard,
     HistoryPage,
-    FormPage
+    FormPage,
+    SwipePage
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    SwingModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -29,8 +36,8 @@ import {PictureCard} from "../components/picture.card.component";
     MyApp,
     HomePage,
     FormPage,
-    HistoryPage,
-    PictureCard
+    PictureCard,
+    SwipePage,
   ],
   providers: [
     PictureService,

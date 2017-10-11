@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { FormPage } from '../pages/formPage/formPage';
+import { SwipePage} from '../pages/swipePage/swipePage';
 
 
 @Component({
