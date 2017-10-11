@@ -51,8 +51,7 @@ export class SwipePage {
     };
 
     this.listOfContacts = this.pictureService.getPictureData();
-
-
+    this.cards = new Array<any>()
   }
 
   goToHistory(){
@@ -65,7 +64,6 @@ export class SwipePage {
       event.target.style.background = '#ffffff';
     });
    
-    this.cards = [{name: this.pictureService.getPictureData()[0].name}];
     this.addNewCards();
   }
 
@@ -111,7 +109,7 @@ addNewCards() {
   this.cards.push(this.listOfContacts[3])
   this.cards.push(this.listOfContacts[2])
   this.cards.push(this.listOfContacts[1])
-  this.cards.push(this.listOfContacts[0])
+  this.cards.push(this.listOfContacts[0]);
 }
 
 // http://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hex-in-javascript
