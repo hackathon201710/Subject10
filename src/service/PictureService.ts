@@ -1,4 +1,5 @@
 import {Injectable} from "@angular/core";
+import {Picture} from "../model/Picture";
 
 @Injectable()
 export class PictureService {
@@ -12,6 +13,36 @@ export class PictureService {
     result[3] = this.addKingpin();
     result[4] = this.addMelissandra();
     result[5] = this.addCersei();
+
+    return result;
+  }
+
+  getPictureData(): Picture[] {
+    let result = [];
+
+    result[0] = new Picture();
+    result[0].data = this.addLoki();
+    result[0].name = 'Loki';
+
+    result[1] = new Picture();
+    result[1].data = this.addJoker();
+    result[1].name = 'Joker';
+
+    result[2] = new Picture();
+    result[2].data = this.addJessica();
+    result[2].name = 'Jessica';
+
+    result[3] = new Picture();
+    result[3].data = this.addKingpin();
+    result[3].name = 'Kingpin';
+
+    result[4] = new Picture();
+    result[4].data = this.addMelissandra();
+    result[4].name = 'Melissandra';
+
+    result[5] = new Picture();
+    result[5].data = this.addCersei();
+    result[5].name = 'Cersei';
 
     return result;
   }
