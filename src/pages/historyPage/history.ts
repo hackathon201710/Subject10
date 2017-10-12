@@ -2,6 +2,7 @@ import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {StorageService} from "../../service/StorageService";
 import {Picture} from "../../model/Picture";
+import {FormPage} from "../formPage/formPage";
 
 @Component({
   selector: 'page-history',
@@ -25,5 +26,9 @@ export class HistoryPage {
     this.storageService.getPictureData().then((data) => {
       this.pictures = data;
     });
+  }
+
+  inspect(){
+    this.navCtrl.push(FormPage, {data: this.pictures[0]});
   }
 }
