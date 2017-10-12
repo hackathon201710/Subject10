@@ -65,7 +65,7 @@ export class SwipePage {
     this.swingStack.throwin.subscribe((event: DragEvent) => {
       event.target.style.background = '#ffffff';
     });
-   
+
     this.addNewCards();
   }
 
@@ -114,11 +114,11 @@ voteUp(like: boolean) {
 
 // Add new cards to our array
 addNewCards() {
-  this.cards.push(this.listOfContacts[5])
-  this.cards.push(this.listOfContacts[4])
-  this.cards.push(this.listOfContacts[3])
-  this.cards.push(this.listOfContacts[2])
-  this.cards.push(this.listOfContacts[1])
+  this.cards.push(this.listOfContacts[5]);
+  this.cards.push(this.listOfContacts[4]);
+  this.cards.push(this.listOfContacts[3]);
+  this.cards.push(this.listOfContacts[2]);
+  this.cards.push(this.listOfContacts[1]);
   this.cards.push(this.listOfContacts[0]);
 }
 
