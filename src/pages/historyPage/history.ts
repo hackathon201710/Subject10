@@ -28,7 +28,7 @@ export class HistoryPage {
     });
   }
 
-  inspect(){
-    this.navCtrl.push(FormPage, {data: this.pictures[0]});
+  inspect(picture: Picture){
+    this.navCtrl.push(FormPage, {data: picture});
   }
 }
