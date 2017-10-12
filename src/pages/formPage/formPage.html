@@ -12,7 +12,7 @@
   </ion-card>
 
 
-<ion-textarea placeholder= "Add comment here"type="text" value="" [(ngModel)]="this.comment"></ion-textarea>
+<ion-textarea placeholder= "Add comment here"type="text" value="" [disabled]="isDisabled" [(ngModel)]="this.comment"></ion-textarea>
 
 <button ion-button block color="secondary" (click)="done()">DONE</button>
 
