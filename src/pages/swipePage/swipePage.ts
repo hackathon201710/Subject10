@@ -36,7 +36,7 @@ export class SwipePage {
   cards: Array<any>;
   stackConfig: StackConfig;
   recentCard: string = '';
-  isDone: boolean
+  isDone: boolean;
 
   constructor(public navCtrl: NavController, public pictureService: PictureService) {
     this.stackConfig = {
@@ -57,7 +57,7 @@ export class SwipePage {
   }
 
   goToHistory(){
-    this.navCtrl.push(HistoryPage)
+    this.navCtrl.push(HistoryPage);
   }
 
   ngAfterViewInit() {
