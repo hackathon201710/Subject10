@@ -109,7 +109,6 @@ voteUp(like: boolean) {
 
   console.log("CardArrayLegth", this.cards.length)
 
-
 }
 
 // Add new cards to our array
