@@ -15,7 +15,7 @@
 
 ## Conclusions
 
-* The Ionic framework that was used in this project were not the most optional framework of choose. The team suggests to switch framework to eaither an more native based framework or prue HTML5, if this project were to contiune.
-* Server integrations could in theroy improve the usefullness of the application, however this has not been tested yet. Push Notifications could be used in order to alert the user that new cards are ready to be answerd. 
-* The app could be likned to other photoapps that push imgages to a server, that sends out new cards to the app. 
+* The Ionic framework that was used in this project were not the most optional framework of choose. The team suggests to switch framework to either an more native based framework or prue HTML5, if this project were to continue. 
+* Server integrations could in theory improve the usefulness of the application, however this has not been tested yet. Push Notifications could be used in order to alert the user that new cards are ready to be answered. 
+* The app could be linked to other photo apps that push images to a server, that sends out new cards to the app. 
 * Could be expanded with any question and inputfield.
