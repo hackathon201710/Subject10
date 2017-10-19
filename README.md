@@ -1,8 +1,8 @@
 # Subject10 - The Tinder App
 
-**When:** The user opens up the app
+**When:** The user open the app:
 
-**Then:** A stack of cards with a image and an yes or no question is asked. The User can swipe left or right in order to eaither dismiss the card or add additional information that can later be used. Once all cards are completed 
+**Then:** A stack of cards with a image and an yes or no question is asked. The User can swipe left or right in order to eaither dismiss the card or add additional information that can later be used. Once all cards are completed the user shall be informed that the procces is completed. 
 
 **Extra bonus:** Add server integrations to the app in order to send new cards to the user and collect data that the user has added from the client.
 
