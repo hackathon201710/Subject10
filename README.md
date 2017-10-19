@@ -15,4 +15,7 @@
 
 ## Conclusions
 
-* It is not possible to start live recording from a locked iPhone state by sending a Bluetooth command. The reason is that this would allow others to start recording without the user knowing. The only way to start recording is if the user presses the start recording button.
+* The Ionic framework that was used in this project were not the most optional framework of choose. The team suggests to switch framework to eaither an more native based framework or prue HTML5, if this project were to contiune.
+* Server integrations could in theroy improve the usefullness of the application, however this has not been tested yet. Push Notifications could be used in order to alert the user that new cards are ready to be answerd. 
+* The app could be likned to other photoapps that push imgages to a server, that sends out new cards to the app. 
+* Could be expanded with any question and inputfield.
